@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Punto RD - Un Mejor Futuro para Todos</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-background {
+            /* Using the provided background image URL */
+            background-image: url('https://i.imgur.com/bEB3UKU.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Optional: Add a fallback background color or gradient if the image doesn't load */
+            background-color: #4CAF50; /* A green fallback */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col items-center justify-center hero-background py-12 relative">
+        <!-- Bandera Dominicana arriba -->
+        <img src="https://i.imgur.com/2dyteeu.png" alt="Bandera Dominicana" class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-md shadow-lg w-[100px] h-[60px] object-cover">
+
+        <!-- Contenedor principal sin fondo blanco -->
+        <div class="p-8 md:p-12 rounded-2xl shadow-xl max-w-5xl w-full mx-4 text-center">
+            <!-- Nombre y lema con letras claras -->
+            <div class="flex flex-col items-center justify-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2">eco punto RD</h1>
+                <p class="text-xl md:text-2xl text-gray-200 font-semibold">Un mejor futuro para todos</p>
+            </div>
+
+            <!-- Descripción con letras claras -->
+            <p class="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed">
+                Nuestros contenedores con IA optimizan la recolección y separación de residuos, Diseñados para integrarse perfectamente en Todos los entornos.
+            </p>
+
+            <!-- Reloj -->
+            <div class="mb-8 p-4 bg-gray-900 bg-opacity-50 rounded-lg shadow-inner">
+                <p id="current-time" class="text-3xl md:text-4xl font-bold text-white"></p>
+            </div>
+
+            <!-- Texto "Página Beta" y botón "Haz click aquí para ver tus puntos" con letras claras -->
+            <p class="text-lg md:text-xl text-gray-200 font-semibold mb-4">Página Beta</p>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg md:text-xl shadow-lg transform transition duration-300 hover:scale-105 mb-12">
+                Haz click aquí para ver tus puntos
+            </button>
+
+            <!-- Información del proyecto - Cuadro transparente y letras claras, sin línea divisoria -->
+            <div class="mt-12 pt-8 p-4 rounded-lg bg-black bg-opacity-40 text-white">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Proyecto privado</h2>
+                <p class="text-lg mb-2">Materia de <span class="font-semibold">ELABORACION Y EVALUACION DE PROYECTOS.</span></p>
+                <p class="text-lg mb-2">Maestro: <span class="font-semibold">VICTOR JESUS SANCHEZ MUÑOZ.</span></p>
+                <p class="text-lg mb-2">ESTUDIANTES: <span class="font-semibold">Jose Manuel Carrasco, Luz Medina, Licaira Batista.</span></p>
+                <p class="text-lg font-semibold mt-4">Universidad OYM</p>
+            </div>
+
+        </div>
+        <!-- Texto "Hecha por JMACF" y logo al fondo de todo -->
+        <p class="text-white text-sm mt-8 pb-4 flex items-center">
+            Hecha por JMACF
+            <!-- Nota: Para que el logo no tenga fondo blanco, la imagen original (qATYI7m.jpeg) debe ser un archivo PNG con transparencia. -->
+            <img src="https://i.imgur.com/qATYI7m.jpeg" alt="Logo JMACF" class="ml-2 w-8 h-8 object-contain">
+        </p>
+    </div>
+
+    <script>
+        // Function to update the time
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to display time immediately
+        updateTime();
+    </script>
+</body>
+</html>
